@@ -1,5 +1,4 @@
 import { blue, teal } from "@material-ui/core/colors"
-import green from "@material-ui/core/colors/green"
 import grey from "@material-ui/core/colors/grey"
 import { createMuiTheme } from "@material-ui/core/styles"
 
@@ -13,11 +12,27 @@ export const MuiTheme = createMuiTheme({
       light: blue[400],
       main: teal[200],
       dark: grey[900],
+      contrastText: "#122C34",
     },
     secondary: {
-      light: green[300],
-      main: green[500],
-      dark: green[700],
+      light: "#ffffff",
+      main: "#ffffff",
+      dark: "#ffffff",
+      contrastText: "#ffffff",
     },
+  },
+  typography: {
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
   },
 })
