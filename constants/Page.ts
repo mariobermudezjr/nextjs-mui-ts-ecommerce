@@ -24,7 +24,7 @@ export class Page implements IEnum<Page> {
     1,
     "Landing Page",
     "Browse though our products and services",
-    "Landing",
+    "MB Sewing Machine Service",
     "Solving sewing machine problems so you don't have to.",
     "/",
     Home,
