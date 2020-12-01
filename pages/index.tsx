@@ -2,7 +2,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
 import React from "react"
 import { AppContext } from "../components/AppContext"
 import { SpacingPaper } from "../components/atoms"
-import { ThreeSpaces } from "../components/molecules"
+import { LandingPageImage, ThreeSpaces } from "../components/molecules"
 import { HeaderArticleContainer } from "../components/organisms"
 import { Layout } from "../components/templates"
 import { Page } from "../constants"
@@ -22,6 +22,7 @@ function Index(props: Props) {
     <Layout className={classes.root}>
       <HeaderArticleContainer>
         <SpacingPaper>
+          <LandingPageImage />
           <ThreeSpaces />
         </SpacingPaper>
       </HeaderArticleContainer>

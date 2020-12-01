@@ -9,7 +9,8 @@ import React from "react"
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    flexGrow: 1,
+    display: "flex",
+    marginTop: theme.spacing(4),
   },
   paper: {
     display: "flex",

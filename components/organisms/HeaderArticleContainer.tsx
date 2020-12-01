@@ -1,6 +1,5 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
 import React from "react"
-import { PageHeader } from "../molecules"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,7 +26,7 @@ export const HeaderArticleContainer = function (props: Props) {
   const classes = useStyles(props)
   return (
     <>
-      <PageHeader />
+      {/* <PageHeader /> */}
       <section className={classes.contentsContainer}>{children}</section>
     </>
   )
