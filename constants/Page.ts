@@ -22,7 +22,7 @@ export class Page implements IEnum<Page> {
 
   public static readonly TOP = new Page(
     1,
-    "Landing Page",
+    "Home",
     "Browse though our products and services",
     "MB Sewing Machine Service",
     "Solving sewing machine problems so you don't have to.",

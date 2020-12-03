@@ -22,7 +22,7 @@ function About(props: Props) {
     <Layout className={classes.root}>
       <HeaderArticleContainer>
         <SpacingPaper>
-          <Typography variant="h5">About page !!</Typography>
+          <Typography variant="h5">Sign In Page</Typography>
         </SpacingPaper>
       </HeaderArticleContainer>
     </Layout>
