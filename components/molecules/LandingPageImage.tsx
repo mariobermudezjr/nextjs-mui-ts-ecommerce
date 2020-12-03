@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   landingButton: {
     margin: theme.spacing(3),
+    borderRadius: "0",
     color: "#FFFFFF",
     backgroundColor: "#2A4494",
     "&:hover": {

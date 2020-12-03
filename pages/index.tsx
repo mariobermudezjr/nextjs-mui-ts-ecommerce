@@ -2,7 +2,11 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
 import React from "react"
 import { AppContext } from "../components/AppContext"
 import { SpacingPaper } from "../components/atoms"
-import { LandingPageImage, ThreeSpaces } from "../components/molecules"
+import {
+  DoubleSectionGrid,
+  LandingPageImage,
+  ThreeSpaces,
+} from "../components/molecules"
 import { HeaderArticleContainer } from "../components/organisms"
 import { Layout } from "../components/templates"
 import { Page } from "../constants"
@@ -24,6 +28,7 @@ function Index(props: Props) {
         <SpacingPaper>
           <LandingPageImage />
           <ThreeSpaces />
+          <DoubleSectionGrid />
         </SpacingPaper>
       </HeaderArticleContainer>
     </Layout>
