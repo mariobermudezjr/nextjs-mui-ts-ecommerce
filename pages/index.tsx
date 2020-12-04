@@ -5,6 +5,7 @@ import { SpacingPaper } from "../components/atoms"
 import {
   DoubleSectionGrid,
   LandingPageImage,
+  PageFooter,
   SubscribeForUpdates,
   ThreeSpaces,
 } from "../components/molecules"
@@ -32,6 +33,7 @@ function Index(props: Props) {
           <DoubleSectionGrid />
           <SubscribeForUpdates />
         </SpacingPaper>
+        <PageFooter />
       </HeaderArticleContainer>
     </Layout>
   )

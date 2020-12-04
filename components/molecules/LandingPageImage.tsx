@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   overlay: {
     display: "inline-block",
     position: "absolute",
-    height: "92vh",
+    height: "93vh",
     width: "100%",
     top: "0%",
     left: "0%",
@@ -26,12 +26,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "center",
     alignItems: "center",
     backgroundImage: `url(${ImageURL})`,
-    height: "92vh",
-    minHeight: "92vh",
+    height: "93vh",
+    minHeight: "93vh",
   },
   contentContainer: {
     display: "flex",
-    height: "92vh",
+    height: "93vh",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -65,7 +65,7 @@ export const LandingPageImage = function () {
   }
 
   return (
-    <Grid container className={classes.root} spacing={3}>
+    <Grid container className={classes.root} spacing={2}>
       <Paper className={classes.paper} square>
         <div className={classes.overlay}>
           <div className={classes.contentContainer}>

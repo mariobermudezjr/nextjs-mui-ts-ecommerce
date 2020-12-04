@@ -147,7 +147,7 @@ export const DoubleSectionGrid = function () {
                         </div>
                       </Box>
                       <Box
-                        border={1}
+                        border={0}
                         borderColor="white"
                         display={{ xs: "none", md: "block" }}
                         m={1}
@@ -165,7 +165,7 @@ export const DoubleSectionGrid = function () {
                   ) : (
                     <>
                       <Box
-                        border={1}
+                        border={0}
                         borderColor="white"
                         display={{ xs: "none", md: "block" }}
                         m={1}
