@@ -45,7 +45,7 @@ class MyDocument extends Document<Props> {
     const page = pageProps.page.selectedPage
 
     return (
-      <html lang="id">
+      <html lang="en">
         <Head>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
