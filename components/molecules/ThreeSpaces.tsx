@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: 350,
-    width: 275,
+    height: 434,
+    width: 339,
     backgroundColor: fade("#2A4494", 0.5),
     overflow: "hidden",
     backgroundImage: `url(${ImageURL})`,
@@ -28,10 +28,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   innerPaper: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "center",
     alignItems: "center",
-    height: 250,
-    width: 175,
+    height: 326,
+    width: 249,
     backgroundColor: "#122C34",
     borderWidth: "2dpi",
   },
@@ -39,10 +39,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingTop: "24px",
   },
   boxBodyText: {
-    padding: "16px",
+    margin: theme.spacing(4),
   },
   buttonContainer: {
     padding: "16px",
+  },
+  threeSpaceSectionButton: {
+    outlineColor: "#122C34",
+    "&:hover": {
+      outlineColor: "#FFFFFF",
+    },
   },
 }))
 
@@ -71,9 +77,9 @@ export const ThreeSpaces = function () {
 
   return (
     <>
-      <Grid container className={classes.root} spacing={2}>
+      <Grid container className={classes.root} spacing={0}>
         <Grid item xs={12}>
-          <Grid container justify="center" spacing={5}>
+          <Grid container justify="space-evenly" spacing={5}>
             {boxArrayText.map((text: any) => (
               <Grid key={text.index} item>
                 <Paper className={classes.paper} square>
@@ -82,12 +88,7 @@ export const ThreeSpaces = function () {
                     borderColor="white"
                     className={classes.innerPaper}
                   >
-                    <Typography
-                      align="center"
-                      variant="h6"
-                      color="secondary"
-                      className={classes.boxHeadingText}
-                    >
+                    <Typography align="center" variant="h6" color="secondary">
                       {text.header}
                     </Typography>
                     <Typography
@@ -100,7 +101,11 @@ export const ThreeSpaces = function () {
                       {text.body}
                     </Typography>
                     <div className={classes.buttonContainer}>
-                      <Button href="#text-buttons" color="secondary">
+                      <Button
+                        href="#text-buttons"
+                        color="secondary"
+                        className={classes.threeSpaceSectionButton}
+                      >
                         Learn More
                       </Button>
                     </div>

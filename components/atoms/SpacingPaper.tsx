@@ -5,8 +5,9 @@ import React from "react"
 const useStyles = makeStyles<Theme, Props>((theme: Theme) =>
   createStyles({
     root: (props: Props) => ({
-      padding: props.noPadding === true ? theme.spacing(0) : theme.spacing(2),
+      padding: props.noPadding === true ? theme.spacing(0) : theme.spacing(0),
       marginBottom: theme.spacing(2),
+      backgroundColor: "#FCFAFA",
     }),
   })
 )
@@ -30,7 +31,7 @@ export const SpacingPaper = (props: Props) => {
   const { children } = props
   const classes = useStyles(props)
   return (
-    <Paper className={classes.root} elevation={6}>
+    <Paper className={classes.root} elevation={0}>
       {children}
     </Paper>
   )

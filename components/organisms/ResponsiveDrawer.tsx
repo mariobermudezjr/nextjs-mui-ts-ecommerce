@@ -21,11 +21,11 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "absolute",
       marginLeft: drawerWidth,
       [theme.breakpoints.up("md")]: {
-        width: `calc(100% - ${drawerWidth}px)`,
+        width: `calc(100% - ${0}px)`, // Use drawerWidth for original UI experience
       },
     },
     navIconHide: {
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("xl")]: {
         display: "none",
       },
     },
@@ -89,7 +89,7 @@ export const ResponsiveDrawer = function (props: Props) {
         </Toolbar>
       </AppBar>
 
-      <Hidden mdUp>
+      <Hidden xlUp>
         <Drawer
           variant="temporary"
           anchor={"left"}
@@ -106,7 +106,7 @@ export const ResponsiveDrawer = function (props: Props) {
         </Drawer>
       </Hidden>
 
-      <Hidden smDown implementation="css">
+      <Hidden xlDown implementation="css">
         <Drawer
           variant="permanent"
           open

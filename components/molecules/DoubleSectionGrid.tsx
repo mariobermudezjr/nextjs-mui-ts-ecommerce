@@ -8,7 +8,7 @@ import React from "react"
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(0),
   },
   arrayRoot: {
     display: "flex",
@@ -30,8 +30,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "center",
     height: 333.37,
     width: "100%",
-    marginLeft: theme.spacing(8),
-    marginRight: theme.spacing(8),
   },
   innerPaperImage: {
     display: "flex",
@@ -40,14 +38,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "flex-start",
     height: 333.37,
     width: "20%",
-    margin: theme.spacing(4),
+    margin: theme.spacing(3),
   },
   boxHeadingText: {},
+
   boxBodyText: {
     marginTop: theme.spacing(1),
-  },
-  buttonContainer: {
-    padding: "16px",
   },
 
   doubleSectionButtonContainer: {
@@ -56,7 +52,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(3),
   },
   doubleSectionButton: {
-    borderRadius: "0",
     color: "#122C34",
     backgroundColor: "#FFFFFF",
 
@@ -73,21 +68,21 @@ export const DoubleSectionGrid = function () {
   const boxArrayText = [
     {
       index: 1,
-      header: `Finely Hand Crafted`,
+      header: `Finely Hand Crafted.`,
       body:
         "Our folders are hand made and designed using industry standard materials.",
       image: "https://source.unsplash.com/random",
     },
     {
       index: 2,
-      header: "Designed to Last",
+      header: "Designed to Last.",
       body:
         "The folders we make are designed to last. We provide proper ways to care for the folders.",
       image: "https://source.unsplash.com/random",
     },
     {
       index: 3,
-      header: `Best Practices`,
+      header: `Best Practices.`,
       body:
         "The methods to use folders are shared so you can make your investment last.",
       image: "https://source.unsplash.com/random",
@@ -96,7 +91,7 @@ export const DoubleSectionGrid = function () {
 
   return (
     <>
-      <Grid container className={classes.root} spacing={0}>
+      <Grid container className={classes.root} spacing={3}>
         <Grid item xs={12}>
           <Grid
             className={classes.arrayRoot}
@@ -105,41 +100,50 @@ export const DoubleSectionGrid = function () {
             spacing={8}
           >
             {boxArrayText.map((text: any) => (
-              <Grid key={text.index} item>
+              <Grid
+                key={text.index}
+                item
+                style={{
+                  padding: "0px",
+                  marginLeft: "72px",
+                  marginRight: "72px",
+                }}
+              >
                 <Box className={classes.paper}>
                   {Number(text.index) % 2 !== 0 ? (
-                    <React.Fragment>
+                    <>
                       {" "}
                       <Box
                         borderColor="white"
                         className={classes.innerPaperText}
                       >
-                        <Typography
-                          align="center"
-                          variant="h6"
-                          color="textSecondary"
-                          className={classes.boxHeadingText}
-                        >
-                          {text.header}
-                        </Typography>
-                        <Typography
-                          align="center"
-                          variant="body2"
-                          variantMapping={{ body1: "p" }}
-                          color="textSecondary"
-                          className={classes.boxBodyText}
-                        >
-                          {text.body}
-                        </Typography>
-                        <div className={classes.doubleSectionButtonContainer}>
-                          <Button
-                            variant="contained"
-                            color="secondary"
-                            size="large"
-                            className={classes.doubleSectionButton}
+                        <div style={{ width: "250px" }}>
+                          <Typography
+                            align="center"
+                            variant="h6"
+                            color="textPrimary"
+                            className={classes.boxHeadingText}
                           >
-                            Get Started
-                          </Button>
+                            {text.header}
+                          </Typography>
+                          <Typography
+                            align="center"
+                            variant="body2"
+                            variantMapping={{ body1: "p" }}
+                            color="textSecondary"
+                            className={classes.boxBodyText}
+                          >
+                            {text.body}
+                          </Typography>
+                          <div className={classes.doubleSectionButtonContainer}>
+                            <Button
+                              variant="outlined"
+                              size="large"
+                              className={classes.doubleSectionButton}
+                            >
+                              Get Started
+                            </Button>
+                          </div>
                         </div>
                       </Box>
                       <Box
@@ -157,9 +161,9 @@ export const DoubleSectionGrid = function () {
                           }}
                         />
                       </Box>
-                    </React.Fragment>
+                    </>
                   ) : (
-                    <React.Fragment>
+                    <>
                       <Box
                         border={1}
                         borderColor="white"
@@ -179,34 +183,36 @@ export const DoubleSectionGrid = function () {
                         borderColor="white"
                         className={classes.innerPaperText}
                       >
-                        <Typography
-                          align="center"
-                          variant="h6"
-                          color="textSecondary"
-                          className={classes.boxHeadingText}
-                        >
-                          {text.header}
-                        </Typography>
-                        <Typography
-                          align="left"
-                          variant="body2"
-                          variantMapping={{ body1: "p" }}
-                          color="textSecondary"
-                          className={classes.boxBodyText}
-                        >
-                          {text.body}
-                        </Typography>
-                        <div className={classes.doubleSectionButtonContainer}>
-                          <Button
-                            variant="contained"
-                            size="large"
-                            className={classes.doubleSectionButton}
+                        <div style={{ width: "250px" }}>
+                          <Typography
+                            align="center"
+                            variant="h6"
+                            color="textPrimary"
+                            className={classes.boxHeadingText}
                           >
-                            Get Started
-                          </Button>
+                            {text.header}
+                          </Typography>
+                          <Typography
+                            align="center"
+                            variant="body2"
+                            variantMapping={{ body1: "p" }}
+                            color="textSecondary"
+                            className={classes.boxBodyText}
+                          >
+                            {text.body}
+                          </Typography>
+                          <div className={classes.doubleSectionButtonContainer}>
+                            <Button
+                              variant="outlined"
+                              size="large"
+                              className={classes.doubleSectionButton}
+                            >
+                              Get Started
+                            </Button>
+                          </div>
                         </div>
                       </Box>
-                    </React.Fragment>
+                    </>
                   )}
                 </Box>
               </Grid>

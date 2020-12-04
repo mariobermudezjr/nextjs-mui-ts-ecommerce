@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   overlay: {
     display: "inline-block",
     position: "absolute",
-    height: "88vh",
+    height: "92vh",
     width: "100%",
     top: "0%",
     left: "0%",
@@ -26,14 +26,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "center",
     alignItems: "center",
     backgroundImage: `url(${ImageURL})`,
-    height: "88vh",
-    minHeight: "88vh",
+    height: "92vh",
+    minHeight: "92vh",
   },
   contentContainer: {
     display: "flex",
+    height: "92vh",
     flexDirection: "column",
     justifyContent: "center",
-    marginTop: "25%",
+    alignItems: "center",
+    alignContent: "center",
+    justifyItems: "center",
   },
   landingButtonContainer: {
     display: "flex",
@@ -41,7 +44,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   landingButton: {
     margin: theme.spacing(3),
-    borderRadius: "0",
     color: "#122C34",
     backgroundColor: "#FFFFFF",
     "&:hover": {
@@ -63,34 +65,32 @@ export const LandingPageImage = function () {
   }
 
   return (
-    <>
-      <Grid container className={classes.root} spacing={3}>
-        <Paper className={classes.paper} square>
-          <div className={classes.overlay}>
-            <div className={classes.contentContainer}>
-              <Typography align="center" variant="h6" color="secondary">
-                {boxArrayText.body1}
-              </Typography>
-              <Typography align="center" variant="h6" color="secondary">
-                {boxArrayText.body2}
-              </Typography>
-              <Typography align="center" variant="h6" color="secondary">
-                {boxArrayText.body3}
-              </Typography>
-              <div className={classes.landingButtonContainer}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  size="large"
-                  className={classes.landingButton}
-                >
-                  Get Started
-                </Button>
-              </div>
+    <Grid container className={classes.root} spacing={3}>
+      <Paper className={classes.paper} square>
+        <div className={classes.overlay}>
+          <div className={classes.contentContainer}>
+            <Typography align="center" variant="h6" color="secondary">
+              {boxArrayText.body1}
+            </Typography>
+            <Typography align="center" variant="h6" color="secondary">
+              {boxArrayText.body2}
+            </Typography>
+            <Typography align="center" variant="h6" color="secondary">
+              {boxArrayText.body3}
+            </Typography>
+            <div className={classes.landingButtonContainer}>
+              <Button
+                variant="contained"
+                color="secondary"
+                size="large"
+                className={classes.landingButton}
+              >
+                Get Started
+              </Button>
             </div>
           </div>
-        </Paper>
-      </Grid>
-    </>
+        </div>
+      </Paper>
+    </Grid>
   )
 }
