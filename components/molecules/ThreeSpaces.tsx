@@ -7,19 +7,23 @@ import { makeStyles, Theme } from "@material-ui/core/styles"
 import { fade } from "@material-ui/core/styles/colorManipulator"
 import React from "react"
 
+const ImageURL = "https://source.unsplash.com/random"
+
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(8),
   },
   paper: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     height: 350,
-    width: 250,
+    width: 275,
     backgroundColor: fade("#2A4494", 0.5),
     overflow: "hidden",
+    backgroundImage: `url(${ImageURL})`,
   },
   innerPaper: {
     display: "flex",
@@ -27,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "space-around",
     alignItems: "center",
     height: 250,
-    width: 150,
+    width: 175,
     backgroundColor: "#122C34",
     borderWidth: "2dpi",
   },
@@ -39,20 +43,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   buttonContainer: {
     padding: "16px",
-  },
-  control: {
-    padding: theme.spacing(2),
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-  },
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
   },
 }))
 
@@ -83,14 +73,10 @@ export const ThreeSpaces = function () {
     <>
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
-          <Grid container justify="center" spacing={8}>
+          <Grid container justify="center" spacing={5}>
             {boxArrayText.map((text: any) => (
               <Grid key={text.index} item>
                 <Paper className={classes.paper} square>
-                  {/* <img
-                    src="https://source.unsplash.com/random"
-                    style={{ width: "100%", height: "auto" }}
-                  /> */}
                   <Box
                     border={1}
                     borderColor="white"
@@ -122,26 +108,6 @@ export const ThreeSpaces = function () {
                 </Paper>
               </Grid>
             ))}
-            {/* <Card className={classes.card}>
-              <CardMedia
-                className={classes.cardMedia}
-                image="https://source.unsplash.com/random"
-                title="Image title"
-              />
-              <CardContent className={classes.cardContent}>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Heading
-                </Typography>
-                <Typography>
-                  This is a media card. You can use this section to describe the
-                  content.
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small">View</Button>
-                <Button size="small">Edit</Button>
-              </CardActions>
-            </Card> */}
           </Grid>
         </Grid>
       </Grid>

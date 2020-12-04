@@ -1,6 +1,5 @@
 import { Typography } from "@material-ui/core"
 import Button from "@material-ui/core/Button"
-import { blue } from "@material-ui/core/colors"
 import Grid from "@material-ui/core/Grid"
 import Paper from "@material-ui/core/Paper"
 import { makeStyles, Theme } from "@material-ui/core/styles"
@@ -43,11 +42,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   landingButton: {
     margin: theme.spacing(3),
     borderRadius: "0",
-    color: "#FFFFFF",
-    backgroundColor: "#2A4494",
+    color: "#122C34",
+    backgroundColor: "#FFFFFF",
     "&:hover": {
-      backgroundColor: blue[50],
-      color: "#2A4494",
+      color: "#FFFFFF",
+      backgroundColor: "#122C34",
     },
   },
 }))
@@ -59,7 +58,7 @@ export const LandingPageImage = function () {
     index: 1,
     header: `None`,
     body1: "Solving Sewing",
-    body2: "Sewing Machine Problems",
+    body2: "Machine Problems",
     body3: "So You Don’t Have To",
   }
 

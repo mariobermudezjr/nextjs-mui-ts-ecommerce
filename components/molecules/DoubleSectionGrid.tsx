@@ -27,11 +27,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems: "center",
     height: 333.37,
-    width: "50%",
-    marginLeft: theme.spacing(4),
-    marginRight: theme.spacing(4),
+    width: "100%",
+    marginLeft: theme.spacing(8),
+    marginRight: theme.spacing(8),
   },
   innerPaperImage: {
     display: "flex",
@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "center",
     alignItems: "flex-start",
     height: 333.37,
-    width: "50%",
-    margin: theme.spacing(8),
+    width: "20%",
+    margin: theme.spacing(4),
   },
   boxHeadingText: {},
   boxBodyText: {
@@ -57,11 +57,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   doubleSectionButton: {
     borderRadius: "0",
-    color: "#FFFFFF",
-    backgroundColor: "#2A4494",
+    color: "#122C34",
+    backgroundColor: "#FFFFFF",
+
     "&:hover": {
-      backgroundColor: "#FFFFFF",
-      color: "#2A4494",
+      color: "#FFFFFF",
+      backgroundColor: "#122C34",
     },
   },
 }))
@@ -95,7 +96,7 @@ export const DoubleSectionGrid = function () {
 
   return (
     <>
-      <Grid container className={classes.root} spacing={2}>
+      <Grid container className={classes.root} spacing={0}>
         <Grid item xs={12}>
           <Grid
             className={classes.arrayRoot}
@@ -122,7 +123,7 @@ export const DoubleSectionGrid = function () {
                           {text.header}
                         </Typography>
                         <Typography
-                          align="left"
+                          align="center"
                           variant="body2"
                           variantMapping={{ body1: "p" }}
                           color="textSecondary"
@@ -144,7 +145,8 @@ export const DoubleSectionGrid = function () {
                       <Box
                         border={1}
                         borderColor="white"
-                        className={classes.innerPaperImage}
+                        display={{ xs: "none", md: "block" }}
+                        m={1}
                       >
                         <img
                           src="https://source.unsplash.com/random"
@@ -161,7 +163,8 @@ export const DoubleSectionGrid = function () {
                       <Box
                         border={1}
                         borderColor="white"
-                        className={classes.innerPaperImage}
+                        display={{ xs: "none", md: "block" }}
+                        m={1}
                       >
                         <img
                           src="https://source.unsplash.com/random"
@@ -196,7 +199,6 @@ export const DoubleSectionGrid = function () {
                         <div className={classes.doubleSectionButtonContainer}>
                           <Button
                             variant="contained"
-                            color="secondary"
                             size="large"
                             className={classes.doubleSectionButton}
                           >
