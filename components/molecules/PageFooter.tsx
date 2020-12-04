@@ -102,8 +102,9 @@ const useStyles = makeStyles((theme: Theme) =>
       alignSelf: "center",
     },
     copywriteTrademark: {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.spacing(2),
       fontSize: "0.75em",
+      marginTop: theme.spacing(3),
     },
     copywriteTrademarkContainerMobile: {
       display: "flex",
