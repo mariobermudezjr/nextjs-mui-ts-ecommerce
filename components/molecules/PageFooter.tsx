@@ -6,6 +6,7 @@ import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import TwitterIcon from "@material-ui/icons/Twitter"
+import WhatsAppIcon from "@material-ui/icons/WhatsApp"
 import YouTubeIcon from "@material-ui/icons/YouTube"
 import React from "react"
 
@@ -235,8 +236,8 @@ export const PageFooter = function (props: Props) {
                 <IconButton aria-label="Visit our LinkedIn" color={"inherit"}>
                   <LinkedInIcon />
                 </IconButton>
-                <IconButton aria-label="Visit our Twitter" color={"inherit"}>
-                  <TwitterIcon />
+                <IconButton aria-label="Call us on Whatsapp" color={"inherit"}>
+                  <WhatsAppIcon />
                 </IconButton>
                 <IconButton aria-label="Visit our YouTube" color={"inherit"}>
                   <YouTubeIcon />
