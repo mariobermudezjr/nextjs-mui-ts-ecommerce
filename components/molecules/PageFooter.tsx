@@ -61,8 +61,8 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: "#122C34",
 
       "&:hover": {
-        color: "#FFFFFF",
-        backgroundColor: "#122C34",
+        color: "#122C34",
+        backgroundColor: "#FFFFFF",
       },
     },
     bottomSectionRoot: {
@@ -121,6 +121,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: "row",
       justifyContent: "space-around",
       justifyItems: "center",
+      height: "max-content",
+      marginTop: theme.spacing(1.5),
     },
     socialMediaIconsMobile: {
       display: "flex",
@@ -179,7 +181,7 @@ export const PageFooter = function (props: Props) {
                 </Box>
               </Box>
               <Button
-                variant="outlined"
+                variant="contained"
                 size="small"
                 className={classes.contactSectionButton}
               >
@@ -285,7 +287,7 @@ export const PageFooter = function (props: Props) {
                 </Box>
               </Box>
               <Button
-                variant="outlined"
+                variant="contained"
                 size="small"
                 className={classes.contactSectionButton}
               >
