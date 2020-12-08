@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: 333.37,
+    height: 400,
     width: "100%",
     overflow: "hidden",
   },
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: 333.37,
+    height: 400,
     width: "100%",
   },
   innerPaperImage: {
@@ -71,21 +71,22 @@ export const DoubleSectionGrid = function () {
       header: `Finely Hand Crafted.`,
       body:
         "Our folders are hand made and designed using industry standard materials.",
-      image: "https://source.unsplash.com/random",
+      image: "https://i.ibb.co/kSLNDKH/tools-crop-copy-1.png",
     },
     {
       index: 2,
       header: "Designed to Last.",
       body:
         "The folders we make are designed to last. We provide proper ways to care for the folders.",
-      image: "https://source.unsplash.com/random",
+      //image: "https://i.ibb.co/Jr8xK5X/caliper-cmprsd.jpg",
+      image: "https://i.ibb.co/YtCp1Q6/caliper-cmprssed400w.jpg",
     },
     {
       index: 3,
       header: `Best Practices.`,
       body:
         "The methods to use folders are shared so you can make your investment last.",
-      image: "https://source.unsplash.com/random",
+      image: "https://i.ibb.co/tXwkV0r/white-thread-cmprsed-copy.jpg",
     },
   ]
 
@@ -153,11 +154,13 @@ export const DoubleSectionGrid = function () {
                         m={1}
                       >
                         <img
-                          src="https://source.unsplash.com/random"
+                          src={text.image}
                           style={{
-                            width: "100%",
+                            width: "400px",
                             height: "auto",
                             borderRadius: "5px",
+                            marginLeft: "150px",
+                            opacity: 0.8,
                           }}
                         />
                       </Box>
@@ -171,11 +174,13 @@ export const DoubleSectionGrid = function () {
                         m={1}
                       >
                         <img
-                          src="https://source.unsplash.com/random"
+                          src={text.image}
                           style={{
-                            width: "100%",
+                            width: "400px",
                             height: "auto",
                             borderRadius: "5px",
+                            marginRight: "150px",
+                            opacity: 0.8,
                           }}
                         />
                       </Box>
