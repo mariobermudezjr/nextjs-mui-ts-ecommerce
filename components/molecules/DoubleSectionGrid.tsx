@@ -48,6 +48,11 @@ const useStyles = makeStyles((theme: Theme) => ({
 
   doubleSectionButtonContainer: {
     display: "flex",
+    justifyContent: "left",
+    marginTop: theme.spacing(3),
+  },
+  doubleSectionButtonContainerMobile: {
+    display: "flex",
     justifyContent: "center",
     marginTop: theme.spacing(3),
   },
@@ -115,8 +120,10 @@ export const DoubleSectionGrid = function () {
                     <>
                       {" "}
                       <Box
+                        border={0}
                         borderColor="white"
-                        className={classes.innerPaperText}
+                        display={{ xs: "block", md: "none" }}
+                        m={1}
                       >
                         <div style={{ width: "250px" }}>
                           <Typography
@@ -129,6 +136,45 @@ export const DoubleSectionGrid = function () {
                           </Typography>
                           <Typography
                             align="center"
+                            variant="body2"
+                            variantMapping={{ body1: "p" }}
+                            color="textSecondary"
+                            className={classes.boxBodyText}
+                          >
+                            {text.body}
+                          </Typography>
+                          <div
+                            className={
+                              classes.doubleSectionButtonContainerMobile
+                            }
+                          >
+                            <Button
+                              variant="outlined"
+                              size="large"
+                              className={classes.doubleSectionButton}
+                            >
+                              Get Started
+                            </Button>
+                          </div>
+                        </div>
+                      </Box>
+                      <Box
+                        border={0}
+                        borderColor="white"
+                        display={{ xs: "none", md: "block" }}
+                        m={1}
+                      >
+                        <div style={{ width: "350px" }}>
+                          <Typography
+                            align="left"
+                            variant="h6"
+                            color="textPrimary"
+                            className={classes.boxHeadingText}
+                          >
+                            {text.header}
+                          </Typography>
+                          <Typography
+                            align="left"
                             variant="body2"
                             variantMapping={{ body1: "p" }}
                             color="textSecondary"
@@ -184,38 +230,92 @@ export const DoubleSectionGrid = function () {
                           }}
                         />
                       </Box>
+
                       <Box
+                        border={0}
                         borderColor="white"
-                        className={classes.innerPaperText}
+                        display={{ xs: "block", md: "none" }}
+                        m={1}
                       >
-                        <div style={{ width: "250px" }}>
-                          <Typography
-                            align="center"
-                            variant="h6"
-                            color="textPrimary"
-                            className={classes.boxHeadingText}
-                          >
-                            {text.header}
-                          </Typography>
-                          <Typography
-                            align="center"
-                            variant="body2"
-                            variantMapping={{ body1: "p" }}
-                            color="textSecondary"
-                            className={classes.boxBodyText}
-                          >
-                            {text.body}
-                          </Typography>
-                          <div className={classes.doubleSectionButtonContainer}>
-                            <Button
-                              variant="outlined"
-                              size="large"
-                              className={classes.doubleSectionButton}
+                        <Box
+                          borderColor="white"
+                          className={classes.innerPaperText}
+                        >
+                          <div style={{ width: "250px" }}>
+                            <Typography
+                              align="center"
+                              variant="h6"
+                              color="textPrimary"
+                              className={classes.boxHeadingText}
                             >
-                              Get Started
-                            </Button>
+                              {text.header}
+                            </Typography>
+                            <Typography
+                              align="center"
+                              variant="body2"
+                              variantMapping={{ body1: "p" }}
+                              color="textSecondary"
+                              className={classes.boxBodyText}
+                            >
+                              {text.body}
+                            </Typography>
+                            <div
+                              className={
+                                classes.doubleSectionButtonContainerMobile
+                              }
+                            >
+                              <Button
+                                variant="outlined"
+                                size="large"
+                                className={classes.doubleSectionButton}
+                              >
+                                Get Started
+                              </Button>
+                            </div>
                           </div>
-                        </div>
+                        </Box>
+                      </Box>
+                      <Box
+                        border={0}
+                        borderColor="white"
+                        display={{ xs: "none", md: "block" }}
+                        m={1}
+                      >
+                        <Box
+                          borderColor="white"
+                          className={classes.innerPaperText}
+                        >
+                          <div style={{ width: "350px" }}>
+                            <Typography
+                              align="left"
+                              variant="h6"
+                              color="textPrimary"
+                              className={classes.boxHeadingText}
+                            >
+                              {text.header}
+                            </Typography>
+                            <Typography
+                              align="left"
+                              variant="body2"
+                              variantMapping={{ body1: "p" }}
+                              color="textSecondary"
+                              className={classes.boxBodyText}
+                            >
+                              {text.body}
+                            </Typography>
+                            <div
+                              className={classes.doubleSectionButtonContainer}
+                            >
+                              <Button
+                                variant="outlined"
+                                size="large"
+                                className={classes.doubleSectionButton}
+                              >
+                                Get Started
+                              </Button>
+                            </div>
+                          </div>
+                        </Box>
                       </Box>
                     </>
                   )}
