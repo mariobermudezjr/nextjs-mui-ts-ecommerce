@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme: Theme) =>
     listItemSecondary: {
       color: theme.palette.primary.contrastText,
     },
+    sidebarAvatar: {
+      backgroundColor: theme.palette.secondary.light,
+    },
   })
 )
 
@@ -66,7 +69,7 @@ export const NextListItem = function (props: Props) {
       <a className={classes.anchorLink} onClick={onClick}>
         <ListItem alignItems="center" divider={true} className={className}>
           <ListItemAvatar>
-            <Avatar>
+            <Avatar className={classes.sidebarAvatar}>
               <AvatorIcon />
             </Avatar>
           </ListItemAvatar>

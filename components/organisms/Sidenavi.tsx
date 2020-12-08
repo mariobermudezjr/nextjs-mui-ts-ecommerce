@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme: Theme) =>
       border: 0,
       boxShadow: theme.shadows[3],
     },
+    svgIcon: {
+      color: theme.palette.primary.light,
+      backgroundColor: theme.palette.secondary.light,
+    },
     deactive: {
       transition: "background-color 1.2s", // mouse out
       "&:hover": {
@@ -77,7 +81,7 @@ export const Sidenavi = function (props: Props) {
               primary={page.pageTitle}
               secondary={page.pageDescription}
               icon={
-                <SvgIcon style={{ color: page.iconColor[600] }}>
+                <SvgIcon className={classes.svgIcon}>
                   <Icon />
                 </SvgIcon>
               }
