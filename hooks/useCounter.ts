@@ -7,6 +7,7 @@ type CounterOperators = {
   increment: () => void
   decrement: () => void
   calculate: (inputNumber: number) => void
+  clear: () => void
 }
 
 /**
@@ -34,5 +35,6 @@ export const useCounter = (): Readonly<CounterOperators> => {
       },
       [dispatch]
     ),
+    clear: useCallback(() => dispatch(CounterActions.clear()), [dispatch]),
   }
 }

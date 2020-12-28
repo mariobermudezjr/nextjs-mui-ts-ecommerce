@@ -36,3 +36,11 @@ export const countReducer = reducerWithInitialState(CounterInitialState)
       })
     }
   )
+  .case(
+    CounterActions.clear,
+    (state: Readonly<ICounterState>): ICounterState => {
+      return produce(state, (draft: ICounterState) => {
+        draft.count = 0
+      })
+    }
+  )

@@ -10,4 +10,5 @@ export const CounterActions = {
   increment: actionCreator("increment"),
   decrement: actionCreator("decrement"),
   calculate: actionCreator<ICounterPayload>("calculate"),
+  clear: actionCreator("clear"),
 }
