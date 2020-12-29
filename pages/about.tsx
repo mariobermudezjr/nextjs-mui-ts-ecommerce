@@ -3,12 +3,9 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
 import React from "react"
 import { AppContext } from "../components/AppContext"
 import { SpacingPaper } from "../components/atoms"
-import {
-  HeaderArticleContainer,
-  ReduxSagaSample,
-} from "../components/organisms"
+import { HeaderArticleContainer } from "../components/organisms"
 import { Layout } from "../components/templates"
-import { Page, SagaSetting } from "../constants"
+import { Page } from "../constants"
 import { useThinOut } from "../hooks"
 import { IPagePayload, PageActions } from "../store/page"
 
@@ -29,6 +26,9 @@ function About(props: Props) {
     <Layout className={classes.root}>
       <HeaderArticleContainer>
         <SpacingPaper>
+          <Typography variant="h5">About Us</Typography>
+        </SpacingPaper>
+        {/* <SpacingPaper>
           <ReduxSagaSample
             title="debounce"
             description={
@@ -54,7 +54,7 @@ function About(props: Props) {
             interval={SagaSetting.THROTTLE_INTERVAL}
             onChange={(inputValue: string) => throttle(inputValue)}
           />
-        </SpacingPaper>
+        </SpacingPaper> */}
       </HeaderArticleContainer>
     </Layout>
   )
