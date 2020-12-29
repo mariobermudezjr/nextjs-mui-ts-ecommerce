@@ -4,32 +4,41 @@ import ButtonBase from "@material-ui/core/ButtonBase"
 import { grey } from "@material-ui/core/colors"
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
+import Link from "next/link"
 import React, { useState } from "react"
 import { AppContext } from "../components/AppContext"
-import { SpacingPaper } from "../components/atoms"
+import { PageFooter } from "../components/molecules"
 import { HeaderArticleContainer } from "../components/organisms"
 import { Layout } from "../components/templates"
 import { Page } from "../constants"
-import { useCounter } from "../hooks"
+import { useCounter, usePage } from "../hooks"
 import { IPagePayload, PageActions } from "../store/page"
 
 const images = [
   {
+    page: Page.FOLDERS,
+    id: 1,
     url: "https://source.unsplash.com/random",
     title: "Folders",
     width: "20%",
   },
   {
+    page: Page.MACHINES,
+    id: 2,
     url: "https://source.unsplash.com/random",
     title: "Machines",
     width: "30%",
   },
   {
+    page: Page.TABLES,
+    id: 3,
     url: "https://source.unsplash.com/random",
     title: "Tables",
     width: "30%",
   },
   {
+    page: Page.LEGS,
+    id: 4,
     url: "https://source.unsplash.com/random",
     title: "Legs",
     width: "20%",
@@ -141,11 +150,13 @@ type Props = {
   defaultInputNumber: number
 }
 
-function Redux(props: Props) {
+function Products(props: Props) {
   const { defaultInputNumber: defaultCount } = props
   const classes = useStyles(props)
   const [inputNumber, setInputNumber] = useState<number>(defaultCount)
   const { count, increment, decrement, calculate, clear } = useCounter()
+  const { selectedPage, changePage } = usePage()
+  const handleChangePage = (page: Page) => () => changePage(page)
 
   /**
    * Change inputNumber value
@@ -165,17 +176,18 @@ function Redux(props: Props) {
   return (
     <Layout className={classes.root}>
       <HeaderArticleContainer>
-        <SpacingPaper>
-          <Box display={{ xs: "block", lg: "none" }}>
-            {images.map((image) => (
+        <Box display={{ xs: "block", lg: "none" }}>
+          {images.map((image) => (
+            <Link key={image.id} href={image.page.relativeUrl}>
               <ButtonBase
                 focusRipple
-                key={image.title}
+                key={image.id}
                 className={classes.image}
                 focusVisibleClassName={classes.focusVisible}
                 style={{
                   width: image.width,
                 }}
+                onClick={handleChangePage(image.page)}
               >
                 <span
                   className={classes.imageSrc}
@@ -196,9 +208,10 @@ function Redux(props: Props) {
                   </Typography>
                 </span>
               </ButtonBase>
-            ))}
-          </Box>
-          {/* <Typography variant="h2" gutterBottom className={classes.title}>
+            </Link>
+          ))}
+        </Box>
+        {/* <Typography variant="h2" gutterBottom className={classes.title}>
             Increment / Decrement
           </Typography>
           <CurrentNumber />
@@ -209,10 +222,11 @@ function Redux(props: Props) {
           <Button variant="contained" color="primary" onClick={decrement}>
             - 1
           </Button> */}
-          <Box display={{ xs: "none", lg: "block" }}>
-            <Box className={classes.rootBoxRow}>
-              <Box className={classes.rootBoxColumn}>
-                <Box className={classes.ButtonBox}>
+        <Box display={{ xs: "none", lg: "block" }}>
+          <Box className={classes.rootBoxRow}>
+            <Box className={classes.rootBoxColumn}>
+              <Box className={classes.ButtonBox}>
+                <Link href={Page.FOLDERS.relativeUrl} key={Page.FOLDERS.id}>
                   <ButtonBase
                     focusRipple
                     key={"Folders"}
@@ -221,6 +235,7 @@ function Redux(props: Props) {
                     style={{
                       width: "500px",
                     }}
+                    onClick={handleChangePage(Page.FOLDERS)}
                   >
                     <span
                       className={classes.imageSrc}
@@ -241,8 +256,10 @@ function Redux(props: Props) {
                       </Typography>
                     </span>
                   </ButtonBase>
-                </Box>
-                <Box className={classes.ButtonBox}>
+                </Link>
+              </Box>
+              <Box className={classes.ButtonBox}>
+                <Link href={Page.MACHINES.relativeUrl} key={Page.MACHINES.id}>
                   <ButtonBase
                     focusRipple
                     key={"Machines"}
@@ -251,6 +268,7 @@ function Redux(props: Props) {
                     style={{
                       width: "500px",
                     }}
+                    onClick={handleChangePage(Page.MACHINES)}
                   >
                     <span
                       className={classes.imageSrc}
@@ -271,10 +289,12 @@ function Redux(props: Props) {
                       </Typography>
                     </span>
                   </ButtonBase>
-                </Box>
+                </Link>
               </Box>
-              <Box className={classes.rootBoxColumn}>
-                <Box className={classes.ButtonBox}>
+            </Box>
+            <Box className={classes.rootBoxColumn}>
+              <Box className={classes.ButtonBox}>
+                <Link href={Page.TABLES.relativeUrl} key={Page.TABLES.id}>
                   <ButtonBase
                     focusRipple
                     key={"Tables"}
@@ -283,6 +303,7 @@ function Redux(props: Props) {
                     style={{
                       width: "500px",
                     }}
+                    onClick={handleChangePage(Page.TABLES)}
                   >
                     <span
                       className={classes.imageSrc}
@@ -303,8 +324,10 @@ function Redux(props: Props) {
                       </Typography>
                     </span>
                   </ButtonBase>
-                </Box>
-                <Box className={classes.ButtonBox}>
+                </Link>
+              </Box>
+              <Box className={classes.ButtonBox}>
+                <Link href={Page.LEGS.relativeUrl} key={Page.LEGS.id}>
                   <ButtonBase
                     focusRipple
                     key={"Legs"}
@@ -313,6 +336,7 @@ function Redux(props: Props) {
                     style={{
                       width: "500px",
                     }}
+                    onClick={handleChangePage(Page.LEGS)}
                   >
                     <span
                       className={classes.imageSrc}
@@ -333,11 +357,11 @@ function Redux(props: Props) {
                       </Typography>
                     </span>
                   </ButtonBase>
-                </Box>
+                </Link>
               </Box>
             </Box>
           </Box>
-        </SpacingPaper>
+        </Box>
 
         {/* <SpacingPaper>
           <FormControl>
@@ -368,6 +392,7 @@ function Redux(props: Props) {
             </Button>
           </FormControl>
         </SpacingPaper> */}
+        <PageFooter />
       </HeaderArticleContainer>
     </Layout>
   )
@@ -376,11 +401,11 @@ function Redux(props: Props) {
 /**
  * Server side rendering
  */
-Redux.getInitialProps = async (ctx: AppContext): Promise<Props> => {
+Products.getInitialProps = async (ctx: AppContext): Promise<Props> => {
   const { store } = ctx
 
   const pagePayload: IPagePayload = {
-    selectedPage: Page.REDUX,
+    selectedPage: Page.PRODUCTS,
   }
   store.dispatch({
     type: PageActions.changePage.toString(),
@@ -391,4 +416,4 @@ Redux.getInitialProps = async (ctx: AppContext): Promise<Props> => {
   }
 }
 
-export default Redux
+export default Products
