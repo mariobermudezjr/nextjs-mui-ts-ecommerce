@@ -101,6 +101,16 @@ export class Page implements IEnum<Page> {
     Person,
     blue
   )
+  public static readonly REGISTER = new Page(
+    11,
+    "Sign Up",
+    "Register new account",
+    "Sign Up",
+    "Register a new account for a seemlesly purchasing experience.",
+    "/signup",
+    Person,
+    blue
+  )
   public static readonly ERROR = new Page(
     99,
     "Error",
