@@ -355,7 +355,7 @@ export const PageFooter = function (props: Props) {
                     className={classes.copywriteTrademarkMobile}
                     align={"left"}
                   >
-                    ©2020 Mario Sewing Machine Service
+                    ©{new Date().getFullYear()} Mario Sewing Machine Service
                   </Typography>
                 </Box>
               </Box>
