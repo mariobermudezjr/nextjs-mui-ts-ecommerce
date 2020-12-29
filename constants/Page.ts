@@ -20,7 +20,7 @@ export class Page implements IEnum<Page> {
    */
   private static _values = new Array<Page>()
 
-  public static readonly TOP = new Page(
+  public static readonly HOME = new Page(
     1,
     "Home",
     "Browse though our products and services",
@@ -30,7 +30,7 @@ export class Page implements IEnum<Page> {
     Home,
     blue
   )
-  public static readonly REDUX = new Page(
+  public static readonly PRODUCTS = new Page(
     2,
     "Products",
     "See what we offer",
@@ -40,8 +40,49 @@ export class Page implements IEnum<Page> {
     LocalGroceryStore,
     blue
   )
-  public static readonly REDUX_SAGAA = new Page(
+
+  public static readonly FOLDERS = new Page(
     3,
+    "Folders",
+    "See what folders we offer in detail",
+    "Sewing Machine Folder",
+    "Look through our selection of folder products.",
+    "/folders",
+    LocalGroceryStore,
+    blue
+  )
+  public static readonly MACHINES = new Page(
+    4,
+    "Machines",
+    "See what sewing machines we offer in detail",
+    "Sewing Machine",
+    "Look through our selection of sewing machines.",
+    "/machines",
+    LocalGroceryStore,
+    blue
+  )
+  public static readonly TABLES = new Page(
+    5,
+    "Tables",
+    "See what folders we offer in detail",
+    "Sewing Machine Tables",
+    "Look through our selection of table products.",
+    "/tables",
+    LocalGroceryStore,
+    blue
+  )
+  public static readonly LEGS = new Page(
+    6,
+    "Legs",
+    "See what legs we offer in detail",
+    "Sewing Machine Legs",
+    "Look through our selection of leg products.",
+    "/legs",
+    LocalGroceryStore,
+    blue
+  )
+  public static readonly ABOUT = new Page(
+    7,
     "About Us",
     "Who are we",
     "About Us",
@@ -50,7 +91,7 @@ export class Page implements IEnum<Page> {
     SupervisedUserCircle,
     blue
   )
-  public static readonly ABOUT = new Page(
+  public static readonly SIGNIN = new Page(
     10,
     "Sign In",
     "Sign into account",

@@ -20,7 +20,7 @@ const useStyles = makeStyles((_: Theme) =>
 
 type Props = {}
 
-function ReduxSaga(props: Props) {
+function About(props: Props) {
   const {} = props
   const classes = useStyles(props)
   const { debounce, debounceState, throttle, throttleState } = useThinOut()
@@ -63,11 +63,11 @@ function ReduxSaga(props: Props) {
 /**
  * Server side rendering
  */
-ReduxSaga.getInitialProps = async (ctx: AppContext): Promise<Props> => {
+About.getInitialProps = async (ctx: AppContext): Promise<Props> => {
   const { store } = ctx
 
   const pagePayload: IPagePayload = {
-    selectedPage: Page.REDUX_SAGAA,
+    selectedPage: Page.ABOUT,
   }
   store.dispatch({
     type: PageActions.changePage.toString(),
@@ -76,4 +76,4 @@ ReduxSaga.getInitialProps = async (ctx: AppContext): Promise<Props> => {
   return {}
 }
 
-export default ReduxSaga
+export default About

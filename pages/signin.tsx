@@ -16,7 +16,7 @@ const useStyles = makeStyles((_: Theme) =>
 
 type Props = {}
 
-function About(props: Props) {
+function Signin(props: Props) {
   const classes = useStyles(props)
   return (
     <Layout className={classes.root}>
@@ -32,11 +32,11 @@ function About(props: Props) {
 /**
  * Server side rendering
  */
-About.getInitialProps = async (ctx: AppContext): Promise<Props> => {
+Signin.getInitialProps = async (ctx: AppContext): Promise<Props> => {
   const { store } = ctx
 
   const pagePayload: IPagePayload = {
-    selectedPage: Page.ABOUT,
+    selectedPage: Page.SIGNIN,
   }
   store.dispatch({
     type: PageActions.changePage.toString(),
@@ -45,4 +45,4 @@ About.getInitialProps = async (ctx: AppContext): Promise<Props> => {
   return {}
 }
 
-export default About
+export default Signin

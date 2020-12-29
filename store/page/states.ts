@@ -7,5 +7,5 @@ export interface IPageState {
   selectedPage: Page
 }
 export const PageInitialState: IPageState = {
-  selectedPage: Page.TOP,
+  selectedPage: Page.HOME,
 }
